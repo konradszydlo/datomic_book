@@ -1,0 +1,125 @@
+
+[
+ {:db/id #db/id[:users -100]
+  :person/name "George Orwell"}
+ {:db/id #db/id[:users -101]
+  :person/name "Joseph Conrad"}
+ {:db/id #db/id[:users -102]
+  :person/name "Adam Mickiewicz"}
+
+ {:db/id #db/id[:library.books -200]
+  :book/title "Animal Farm"
+  :book/alternative-title "Animal Farm"
+  :book/author #db/id[:users -100]
+  :book/genre #db/id[:db.part/user -500]}
+
+ {:db/id #db/id[:library.books -201]
+  :book/title "Lord Jim"
+  :book/author #db/id[:users -101]
+  :book/genre #db/id[:db.part/user -501]
+  :book/publications [
+                      {:publication/city #db/id[:db.part/user -400]
+                       :publication/year  "1900"}
+                      {:publication/city #db/id[:db.part/user -401]
+                       :publication/year "1900"}
+                      {:publication/city #db/id[:db.part/user -402]
+                       :publication/year "1901"} ]
+  }
+
+ {:db/id #db/id[:library.books ]
+  :book/title "The Heart of Darkness"
+  :book/author #db/id[:users -101]
+  :book/genre #db/id[:db.part/user -501]
+  }
+
+ {:db/id #db/id[:library.books -202]
+  :book/title "1984"
+  :book/alternative-title "Nineteen Eighty-Four"
+  :book/author #db/id[:users -100]
+  :book/genre #db/id[:db.part/user -500]}
+
+ {:db/id #db/id [:db.part/user -400]
+  :city/name "Tokyo"}
+
+ {:db/id #db/id [:db.part/user -401]
+  :city/name "Osaka"}
+
+ {:db/id #db/id [:db.part/user -402]
+  :city/name "London"}
+
+ {:db/id #db/id [:db.part/user -403]
+  :city/name "Warszawa"}
+
+ {:db/id #db/id [:db.part/user -404]
+  :city/name "Krakow"}
+
+ {:db/id #db/id [:db.part/user -405]
+  :city/name "Gdansk"}
+
+ {:db/id #db/id [:db.part/user -406]
+  :city/name "Poznan"}
+
+ {:db/id #db/id [:db.part/user -407]
+  :city/name "Wroclaw"}
+
+ {:db/id #db/id [:db.part/user -408]
+  :city/name "Lodz"}
+
+ {:db/id #db/id [:db.part/user -409]
+  :city/name "Szczecin"}
+
+ {:db/id #db/id [:db.part/user]
+  :country/name "Poland"
+  :country/city [#db/id [:db.part/user -403]
+                 #db/id [:db.part/user -404]
+                 #db/id [:db.part/user -405]
+                 #db/id [:db.part/user -406]
+                 #db/id [:db.part/user -407]
+                 #db/id [:db.part/user -408]
+                 #db/id [:db.part/user -409]]}
+
+ ;; people
+ {:db/id #db/id [:db.part/user -300]
+  :person/name "Geoffrey Chaucer" }
+
+ {:db/id #db/id [:db.part/user -301]
+  :person/name "William Shakespeare"
+  :person/influenced-by #db/id [:db.part/user -300]}
+ {:db/id #db/id [:db.part/user -302]
+  :person/name "Alexander Pope"
+  :person/influenced-by #db/id [:db.part/user -301]}
+ {:db/id #db/id [:db.part/user -303]
+  :person/name "William Wordsworth"
+  :person/influenced-by #db/id [:db.part/user -302]}
+ {:db/id #db/id [:db.part/user -304]
+  :person/name "Charles Dickens"
+  :person/influenced-by #db/id [:db.part/user -303]}
+ {:db/id #db/id [:db.part/user -305]
+  :person/name "Thomas Hardy"
+  :person/influenced-by #db/id [:db.part/user -304]}
+ {:db/id #db/id [:db.part/user -306]
+  :person/name "J.R.R. Tolkien"
+  :person/influenced-by #db/id [:db.part/user -305]}
+ {:db/id #db/id [:db.part/user -307]
+  :person/name "George Orwell"
+  :person/influenced-by #db/id [:db.part/user -306]}
+ {:db/id #db/id [:db.part/user -308]
+  :person/name "Anthony Burgess"
+  :person/influenced-by #db/id [:db.part/user -307]}
+
+
+ {:db/id #db/id[:db.part/user -500]
+  :db/ident :book.genre/fiction}
+
+ {:db/id #db/id[:db.part/user -501]
+  :db/ident :book.genre/novel}
+
+ {:db/id #db/id[:users ]
+  :person/name "John Doe"
+  :person/email "j.d@noting.co.uk"}
+
+ {:db/id #db/id[:users ]
+  :person/name "Jane Doe"
+  :person/email "j.d@noting.co.uk"}
+
+ ]

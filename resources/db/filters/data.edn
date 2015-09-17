@@ -1,0 +1,37 @@
+[
+ {:db/id #db/id [:db.part/user -400]
+  :city/name "Tokyo"
+  :city/population 13185502}
+
+ {:db/id #db/id [:db.part/user -401]
+  :city/name "Osaka"
+  :city/population 2666371}
+
+ {:db/id #db/id [:db.part/user -402]
+  :city/name "London"
+  :city/hashed-name "pd91amT5W0ra"
+  :city/population 8416535}
+
+ {:db/id #db/id [:db.part/user -403]
+  :city/name "Warszawa"
+  :city/hashed-name "gf4J6fdSw"
+  :city/population 39000}
+
+ {:db/id #db/id [:db.part/user -404]
+  :city/name "Krakow"}
+
+ {:db/id #db/id [:db.part/user -405]
+  :city/name "Gdansk"}
+
+ {:db/id #db/id [:db.part/user -406]
+  :city/name "Poznan"}
+
+ {:db/id #db/id [:db.part/user -407]
+  :city/name "Wroclaw"}
+
+ {:db/id #db/id [:db.part/user -408]
+  :city/name "Lodz"}
+
+ {:db/id #db/id [:db.part/user -409]
+  :city/name "Szczecin"}
+ ]

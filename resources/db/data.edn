@@ -1,0 +1,14 @@
+[
+ {:db/id #db/id[:db.part/user -100]
+  :person/name "George Orwell"}
+ {:db/id #db/id[:db.part/user -101]
+  :person/name "Joseph Conrad"}
+
+ {:db/id #db/id[:db.part/user -200]
+  :book/title "1984"
+  :book/author #db/id[:db.part/user -100]}
+
+ {:db/id #db/id[:db.part/user -201]
+  :book/title "Lord Jim"
+  :book/author #db/id[:db.part/user -101]}
+ ]

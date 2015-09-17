@@ -1,0 +1,43 @@
+[
+ {:db/id #db/id[:users -100]
+  :person/name "George Orwell"}
+ {:db/id #db/id[:users -101]
+  :person/name "Joseph Conrad"}
+
+ {:db/id #db/id[:library.books -200]
+  :book/title "Animal Farm"
+  :book/author #db/id[:users -100]
+  :book/genre #db/id[:db.part/user -300]}
+
+ {:db/id #db/id[:db.part/user -201]
+  :book/title "Lord Jim"
+  :book/author #db/id[:users -101]
+  :book/genre #db/id[:db.part/user -301]
+  :book/publications [
+                      {:publication/city #db/id[:db.part/user -400]
+                       :publication/year  "1900"}
+                      {:publication/city #db/id[:db.part/user -401]
+                       :publication/year "1900"}
+                      {:publication/city #db/id[:db.part/user -402]
+                       :publication/year "1901"} ]
+  }
+
+ {:db/id #db/id [:db.part/user -400]
+  :city/name "Tokyo"}
+
+ {:db/id #db/id [:db.part/user -401]
+  :city/name "Osaka"}
+
+ {:db/id #db/id [:db.part/user -402]
+  :city/name "London"}
+
+
+
+{:db/id #db/id[:db.part/user -300]
+  :db/ident :book.genre/fiction}
+
+ {:db/id #db/id[:db.part/user -301]
+  :db/ident :book.genre/novel}
+
+
+ ]

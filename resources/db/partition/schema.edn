@@ -1,0 +1,40 @@
+[
+ {:db/id #db/id[:db.part/db]
+  :db/ident :library.books
+  :db.install/_partition :db.part/db
+  :db/doc "The partition of DB for books"}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :users
+  :db.install/_partition :db.part/db
+  :db/doc "The partition of DB for users"}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "Book's title"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/author
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "Books author"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :person/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/many
+  :db/fulltext true
+  :db/doc "Person's name"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :book/genre
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "Books's genre"
+  :db.install/_attribute :db.part/db}
+ ]

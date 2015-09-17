@@ -1,0 +1,39 @@
+
+[{:db/id #db/id [:db.part/user]
+  :db/ident :calc-k-volume
+  :db/fn #db/fn {:lang "clojure" :params [no-of-copies]
+                 ;:requires [[clojure.string :as str]]
+                 :requires [[datomic-book.utils :refer [format-k]]]
+                 :code [(format-k (/ no-of-copies 1000) )]}}
+
+ {:db/id #db/id [:db.part/user]
+  :db/ident :join-strs
+  :db/fn #db/fn {:lang "clojure" :params [s1 s2]
+                 :requires [[clojure.string :as str]]
+                 :code [(str/join " " [s1 s2] )]}}
+
+ {:db/id #db/id [:db.part/user]
+  :db/ident :validate-book
+  :db/doc "Validate required fields for a book"
+  :db/fn #db/fn
+         {:lang "clojure"
+          :params [book]
+          :requires [[clojure.string :as str]]
+          :code (let [required #{:book/title :book/author}
+                      missing (remove book required)]
+                     (if-let [missing (seq missing)]
+                             (throw (RuntimeException. (str "Missing attributes "
+                                                            (str/join ", " missing))))
+                             book))}}
+
+ {:db/id #db/id [:db.part/user]
+  :db/ident :construct-book
+  :db/doc "Construct a book"
+  :db/fn #db/fn
+         {:lang "clojure"
+          :params [db m]
+          :code (let [book (merge {:db/id (d/tempid :db.part/user)}
+                                    m)
+                      validate (-> (d/entity db :validate-book) :db/fn)]
+                     [(validate book)])}}
+ ]

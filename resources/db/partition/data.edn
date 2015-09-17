@@ -1,0 +1,22 @@
+[
+ {:db/id #db/id[:users -100]
+  :person/name "George Orwell"}
+ {:db/id #db/id[:users -101]
+  :person/name "Joseph Conrad"}
+
+ {:db/id #db/id[:library.books -200]
+  :book/title "1984"
+  :book/author #db/id[:users -100]
+  :book/genre #db/id[:db.part/user -300]}
+
+ {:db/id #db/id[:library.books -201]
+  :book/title "Lord Jim"
+  :book/author #db/id[:users -101]
+  :book/genre #db/id[:db.part/user -301]}
+
+ {:db/id #db/id[:db.part/user -300]
+  :db/ident :book.genre/fiction}
+
+ {:db/id #db/id[:db.part/user -301]
+  :db/ident :book.genre/novel}
+ ]
